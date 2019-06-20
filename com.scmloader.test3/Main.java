@@ -6,6 +6,7 @@ public class Main {
         Main m = new Main();
         m.test();
         m.test2();
+        m.test3();
     }
 
     public void test() {
@@ -14,5 +15,9 @@ public class Main {
 
     public void test2() {
         System.out.println("Test2");
+    }
+
+    public void test3() {
+        System.out.println("Test3");
     }
 }
