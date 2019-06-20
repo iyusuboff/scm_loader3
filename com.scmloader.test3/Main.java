@@ -7,6 +7,7 @@ public class Main {
         m.test();
         m.test2();
         m.test3();
+        m.test4();
     }
 
     public void test() {
@@ -18,6 +19,10 @@ public class Main {
     }
 
     public void test3() {
+        System.out.println("Test3");
+    }
+
+    public void test4() {
         System.out.println("Test3");
     }
 }
