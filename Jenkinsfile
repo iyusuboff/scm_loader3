@@ -1,17 +1,13 @@
 #!/usr/bin/env groovy
 pipeline {
-    agent {
-        label 'jenkins-slave-uc'
-    }
+    agent any
     options {
         buildDiscarder(logRotator(numToKeepStr: '10'))
     }
     parameters {
-        string(name: 'BUCKET_PATH', defaultValue: 'uckub-distr-unstable2', description: 'GS bucket name with folder')
-        string(name: 'RELEASE_NAME', defaultValue: '', description: 'The release name')
-        booleanParam(name: 'FULL_DIR', defaultValue: false, description: 'Wheather to create ')
-        string(name: 'NFS_SERVER_IP', defaultValue: '', description: 'The shared nfs server api address where the release folder will be placed')
-
+        string(name: 'Release Name', defaultValue: '', description: 'The release name')
+        string(name: 'NFS Server Ip', defaultValue: '', description: 'The shared nfs server api address where the release folder will be placed')
+        booleanParam(name: 'Full Dir', defaultValue: false, description: 'If to create a full dir')
     }
     stages {
         stage("Build archive") {
