@@ -1,8 +1,5 @@
 #!/usr/bin/env groovy
 pipeline {
-  agent {
-    label 'jenkins-slave-uc'
-  }
   options {
     buildDiscarder(logRotator(numToKeepStr: '10'))
   }
